@@ -19,6 +19,7 @@ import fassadeBetonImage from '../assets/images/fassade-beton.jpeg';
 import fassadeKurvenImage from '../assets/images/fassade-kurven.jpeg';
 import stuetzenImage from '../assets/images/stuetze.jpeg';
 import turmImage from '../assets/images/turm.jpeg';
+import { getBasedUrl } from '@utils/getBasedUrl';
 
 const seoTitle = 'Tragwärk Ingenieure und Planer GmbH | Ingenieurbüro im Kanton Freiburg und Bern';
 const seoDescription =
@@ -37,7 +38,7 @@ const featuresSection = {
     features: featureLists.main.features,
     button: {
         text: 'View Theme Info',
-        link: '/theme-info',
+        link: getBasedUrl('theme-info'),
         variant: 'primary' as const,
     },
 };

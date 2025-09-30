@@ -3,10 +3,11 @@ import { headerMenu } from '@data/menu';
 import Logo from '@components/Logo.astro';
 import { Menu, X, ChevronDown } from 'lucide-astro';
 import Button from '@components/ui/Button.astro';
+import { getBasedUrl } from '@utils/getBasedUrl';
 
 const ctaButton = {
     name: 'Kontakt',
-    link: '/kontakt',
+    link: getBasedUrl('kontakt'),
 };
 
 // Get the current path to determine active menu item
@@ -14,8 +15,8 @@ const currentPath = Astro.url.pathname;
 
 // Function to check if a link is the current page or a parent of the current page
 const isCurrentPage = (link: string) => {
-    if (link === '/') {
-        return currentPath === '/';
+    if (link === getBasedUrl('')) {
+        return currentPath === getBasedUrl('');
     }
     return currentPath.startsWith(link);
 };

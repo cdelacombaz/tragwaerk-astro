@@ -1,10 +1,11 @@
 // src/data/menu.ts
+import { getBasedUrl } from '@utils/getBasedUrl';
 
 export const headerMenu = [
     // { name: 'Theme Info', link: '/theme-info' },
-    { name: 'Dienstleistungen', link: '/#dienstleistungen' },
-    { name: 'Über Uns', link: '/#ueber-uns' },
-    { name: 'Portfolio', link: '/#portfolio' },
+    { name: 'Dienstleistungen', link: getBasedUrl('#dienstleistungen') },
+    { name: 'Über Uns', link: getBasedUrl('#ueber-uns') },
+    { name: 'Portfolio', link: getBasedUrl('#portfolio') },
     // { name: 'Style-Guide', link: '/style-guide', showArrow: false,
     //     children: [
     //         { name: 'Typography', link: '/style-guide#typography' },
@@ -21,6 +22,6 @@ export const headerMenu = [
 export const footerMenu = [];
 
 export const legalMenu = [
-    { name: 'Impressum', link: '/impressum' },
-    { name: 'Datenschutz', link: '/datenschutz' },
+    { name: 'Impressum', link: getBasedUrl('impressum') },
+    { name: 'Datenschutz', link: getBasedUrl('datenschutz') },
 ];
