@@ -1,9 +1,11 @@
 ---
-import Contact from "@components/forms/Contact.astro"
-import { getBackgroundColor, getTextColor, getPaddingClass } from '@utils/styleUtils';
+import Contact from '@components/forms/Contact.astro';
+import { getBackgroundColor, getTextColor, getPaddingClass, getLinkHoverColor } from '@utils/styleUtils';
 import type { ThemeColor, PaddingSize } from '@utils/styleUtils';
 import { siteConfig } from '@data/config';
 import { Mail, Phone, MapPin } from 'lucide-astro';
+import WhatsApp from '@components/icons/WhatsApp.astro';
+
 export interface Props {
     content?: {
         title?: string;
@@ -19,40 +21,56 @@ export interface Props {
     paddingTop?: PaddingSize;
     paddingBottom?: PaddingSize;
 }
-const {
-    content,
-    background = 'base',
-    padding,
-    paddingTop,
-    paddingBottom
-} = Astro.props;
+const { content, background = 'base', padding, paddingTop, paddingBottom } = Astro.props;
 
 const bgColor = getBackgroundColor(background);
 const textColor = getTextColor(background);
+const linkHoverColor = getLinkHoverColor(background);
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
-
 ---
 
 <section class:list={[bgColor, paddingClass]}>
     <div class="site-container px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-                <h2 class:list={[textColor]}>Contact Information</h2>
-                <p class:list={[textColor]}>
-                    We're here to help you with your questions and concerns.
-                </p>
-                <p class:list={[textColor]}>
-                    You can contact us via email or phone.
-                </p>
-                <div class:list={["flex flex-col gap-2 mt-4", textColor]}>
-                    <div class:list={["flex items-center gap-2"]}><Mail aria-hidden="true" /> <a href={`mailto:${siteConfig.Socials.Email}`}>{siteConfig.Socials.Email}</a></div>
-                    <div class:list={["flex items-center gap-2"]}><Phone aria-hidden="true" /> <a href={`tel:${siteConfig.Socials.Phone}`}>{siteConfig.Socials.Phone}</a></div>
-                    <div class:list={["flex items-center gap-2"]}><MapPin aria-hidden="true" /> <a href={`https://maps.google.com/?q=${siteConfig.Socials.Location}`}>{siteConfig.Socials.Location}</a></div>
+                <h2 class:list={[textColor]}>Kontakt Informationen</h2>
+                <p class:list={[textColor]}>Wir sind hier, um Ihnen bei Ihren Fragen und Bedenken zu helfen.</p>
+                <p class:list={[textColor]}>Sie können uns per E-Mail oder Telefon kontaktieren.</p>
+                <div class:list={['flex flex-col gap-2 mt-4', textColor]}>
+                    <div class:list={['flex items-center gap-2']}>
+                        <Mail aria-hidden="true" />
+                        <a class={linkHoverColor} href={`mailto:${siteConfig.Socials.Email}`}
+                            >{siteConfig.Socials.Email}</a
+                        >
+                    </div>
+                    <div class:list={['flex items-center gap-2']}>
+                        <Phone aria-hidden="true" />
+                        <a class={linkHoverColor} href={`tel:${siteConfig.Socials.Phone}`}>{siteConfig.Socials.Phone}</a
+                        >
+                    </div>
+                    <!-- <div class:list={['flex items-center gap-2']}>
+                    <WhatsApp />
+                    <a href={`tel:${siteConfig.Socials.Phone}`}>{siteConfig.Socials.Phone}</a>
+                </div> -->
+                    <div class:list={['flex items-center gap-2']}>
+                        <MapPin aria-hidden="true" class="self-start mt-2" />
+                        <a
+                            href={`https://maps.google.com/?q=${siteConfig.Socials.Location}`}
+                            target="_blank"
+                            class:list={['whitespace-pre-line', linkHoverColor]}
+                            rel="noopener noreferrer">{siteConfig.Socials.Location.split(',').join('\n')}</a
+                        >
+                    </div>
                 </div>
             </div>
             <div>
-                <Contact />
+                <h2 class:list={[textColor]}>Öffnungszeiten</h2>
+                <p class:list={[textColor]}>Montag bis Freitag.</p>
+                <p class:list={[textColor]}>08:00 - 12:00 | 13:00 - 17:00</p>
             </div>
+            <!-- <div>
+                <Contact />
+            </div> -->
         </div>
     </div>
 </section>

@@ -10,6 +10,10 @@ interface Content {
     headline: string;
     subheadline?: string;
     description?: string;
+    list?: {
+        title: string;
+        items: string[];
+    };
     image: {
         src: string | any;
         alt?: string;
@@ -23,6 +27,7 @@ interface Content {
 }
 
 export interface Props {
+    anchorId?: string;
     content: Content;
     // Layout props
     imagePosition?: 'left' | 'right';
@@ -33,6 +38,7 @@ export interface Props {
 }
 
 const {
+    anchorId,
     content,
     // Layout props
     imagePosition = 'right',
@@ -42,7 +48,7 @@ const {
     padding,
 } = Astro.props;
 
-const { eyebrow, headline, subheadline, description, image, buttons = [] } = content;
+const { eyebrow, headline, subheadline, description, list, image, buttons = [] } = content;
 const { src, alt = '' } = image;
 
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
@@ -51,7 +57,7 @@ const textColor = getTextColor(background);
 ---
 
 <section class:list={['relative', bgColor, paddingClass]}>
-    <div class="site-container px-4">
+    <div class="site-container px-4" id={anchorId}>
         <div
             class:list={[
                 'grid gap-16 items-center',
@@ -62,7 +68,12 @@ const textColor = getTextColor(background);
             {/* Image Side */}
             {
                 imagePosition === 'left' && (
-                    <div class="relative aspect-[4/3] overflow-hidden rounded-[var(--border-radius-base)] border border-black">
+                    <div
+                        class:list={[
+                            'relative aspect-[4/3] overflow-hidden rounded-[var(--border-radius-base)] border border-black',
+                            'order-2 md:order-1',
+                        ]}
+                    >
                         <Image
                             {src}
                             {alt}
@@ -77,7 +88,7 @@ const textColor = getTextColor(background);
             }
 
             {/* Content Side */}
-            <div class:list={[textColor]}>
+            <div class:list={[textColor, 'order-1 md:order-2']}>
                 {eyebrow && <Eyebrow text={eyebrow} background={background} />}
                 <h2 class={textColor} data-aos="fade-up">{headline}</h2>
                 {
@@ -94,7 +105,18 @@ const textColor = getTextColor(background);
                         </p>
                     )
                 }
-
+                {
+                    list && (
+                        <div class="mt-8" data-aos="fade-up">
+                            <h3 class:list={['text-h5 mb-2', textColor]}>{list.title}</h3>
+                            <ul class="list-disc pl-4 flex flex-col gap-1">
+                                {list.items.map((item) => (
+                                    <li class:list={['text-base', textColor]}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )
+                }
                 {
                     buttons.length > 0 && (
                         <div class="flex flex-wrap gap-4 mt-8" data-aos="fade-up">
@@ -116,7 +138,10 @@ const textColor = getTextColor(background);
             {
                 imagePosition === 'right' && (
                     <div
-                        class="relative aspect-[4/3] overflow-hidden rounded-[var(--border-radius-base)] border border-black"
+                        class:list={[
+                            'relative aspect-[4/3] overflow-hidden rounded-[var(--border-radius-base)] border border-black',
+                            'order-2 md:order-2',
+                        ]}
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
