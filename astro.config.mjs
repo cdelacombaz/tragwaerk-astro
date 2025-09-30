@@ -9,7 +9,7 @@ const site = 'https://cdelacombaz.github.io';
 
 export default defineConfig({
     site,
-    base: '/',
+    base: '/tragwaerk-astro',
     vite: {
         plugins: [tailwindcss()],
         css: {
