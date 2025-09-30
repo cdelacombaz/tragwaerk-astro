@@ -1,3 +1,4 @@
 export const getBasedUrl = (path: string) => {
-    return (import.meta.env.ASTRO_BASE_PATH || '/') + path;
+    if (import.meta.env.ASTRO_BASE_PATH) return import.meta.env.ASTRO_BASE_PATH + '/' + path
+    return '/' + path;
 };
