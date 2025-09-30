@@ -36,7 +36,7 @@ export const getTextColor = (background: ThemeColor = 'base'): string => {
 
 export const getLinkHoverColor = (background: ThemeColor = 'base'): string => {
     const linkHoverColors = {
-        base: 'hover:text-primary-dark',
+        base: 'hover:text-black',
         light: 'hover:text-primary-light',
         dark: 'hover:text-primary-dark',
     };

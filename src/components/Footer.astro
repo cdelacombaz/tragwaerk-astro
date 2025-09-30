@@ -37,7 +37,7 @@ const cta = footerCta || defaultCta;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class={`bg-black text-white pb-small ${cta.hideCta && hideCta ? 'pt-large' : ''}`}>
+<footer class={`bg-[#3E3E3E] text-white pb-small mt-auto ${cta.hideCta && hideCta ? 'pt-large' : ''}`}>
     <div class="site-container mx-auto px-4">
         {
             !cta.hideCta && !hideCta && (

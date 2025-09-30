@@ -1,0 +1,118 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+// siteConfig wird hier nicht direkt benötigt, aber der Import ist konsistent
+import { siteConfig } from '@data/config';
+
+const heroContent = {
+    title: 'Datenschutzerklärung',
+    overlayOpacity: 0.7,
+};
+---
+
+<Layout title="Datenschutzerklärung" description="Datenschutzerklärung" hideFooterCta={true}>
+    <InnerHero content={heroContent} />
+
+    <div class="site-container mx-auto px-4 relative z-10 space-y-8 py-20">
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Geltungsbereich</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Erhebung und Verwendung
+                    personenbezogener Daten auf dieser Website durch die <strong
+                        >Tragwärk Ingenieure und Planer GmbH</strong
+                    >
+                    (im Folgenden "wir" oder "uns") auf.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Grundsatz der Datenvermeidung</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Wir haben unsere Website so gestaltet, dass keine personenbezogenen Daten erhoben werden, die für
+                    die reine Bereitstellung der Inhalte nicht zwingend notwendig sind. Ihr Besuch auf unserer Website
+                    ist grundsätzlich anonym.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Keine Cookies</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Diese Website verwendet keine Cookies. Es werden somit keine Daten auf Ihrem Endgerät gespeichert,
+                    um Sie bei einem späteren Besuch wiederzuerkennen oder Ihr Verhalten zu verfolgen.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Keine Analyse-Tools</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Wir setzen keine Webanalyse-Dienste wie Google Analytics, Matomo oder ähnliche Tools ein. Ihr
+                    Nutzerverhalten auf unserer Website wird nicht aufgezeichnet oder ausgewertet.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Keine externen Dienste oder Formulare</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Auf dieser Website gibt es keine Funktionen (wie z.B. Kontaktformulare, Newsletter-Anmeldungen,
+                    Kommentarfelder oder die Einbindung von Social-Media-Plugins), über die Sie aktiv personenbezogene
+                    Daten eingeben oder an Dritte übertragen könnten.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Server-Logfiles</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Bei jedem Zugriff auf diese Website werden automatisch und zwangsläufig Informationen durch den
+                    Provider der Seiten in sogenannten Server-Logfiles erfasst. Dies sind technische Daten, die Ihr
+                    Browser automatisch an den Server übermittelt. Dabei handelt es sich in der Regel um:
+                </p>
+                <ul class="list-disc pl-6">
+                    <li>IP-Adresse des anfragenden Rechners</li>
+                    <li>Datum und Uhrzeit des Zugriffs</li>
+                    <li>Name und URL der abgerufenen Datei</li>
+                    <li>Website, von der aus der Zugriff erfolgte (Referrer URL)</li>
+                    <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+                </ul>
+                <p>
+                    Diese Daten sind in der Regel nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser
+                    Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten ist technisch
+                    notwendig, um die Funktionsfähigkeit, Stabilität und Sicherheit der Website zu gewährleisten und
+                    stellt ein berechtigtes Interesse im Sinne der DSGVO dar.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Ihre Rechte</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Da wir über die technisch notwendigen Server-Logfiles hinaus keine personenbezogenen Daten von Ihnen
+                    aktiv sammeln, speichern oder verarbeiten, entfällt die Notwendigkeit der Ausübung von Rechten wie
+                    Auskunft, Berichtigung, Löschung oder Widerspruch bezüglich der Verarbeitung personenbezogener
+                    Daten.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-t pt-8">Kontakt bei Fragen</h2>
+            <div class="prose max-w-none text-gray-600 space-y-4">
+                <p>
+                    Bei Fragen zum Datenschutz können Sie sich jederzeit an die im Impressum genannte verantwortliche
+                    Stelle wenden.
+                </p>
+            </div>
+        </section>
+    </div>
+</Layout>

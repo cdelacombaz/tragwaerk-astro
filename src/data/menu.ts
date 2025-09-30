@@ -21,6 +21,6 @@ export const headerMenu = [
 export const footerMenu = [];
 
 export const legalMenu = [
-    { name: 'Impressum', link: '/legal/impressum' },
-    { name: 'Datenschutz', link: '/legal/datenschutz' },
+    { name: 'Impressum', link: '/impressum' },
+    { name: 'Datenschutz', link: '/datenschutz' },
 ];

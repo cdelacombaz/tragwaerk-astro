@@ -86,6 +86,62 @@
 }
 
 @layer base {
+    [data-theme='monochrome'] {
+        --color-primary: #404040;
+        --color-primary-light: #666666;
+        --color-primary-dark: #2a2a2a;
+        --color-secondary: #808080;
+        --color-secondary-light: #a0a0a0;
+        --color-secondary-dark: #606060;
+        --color-accent: #404040;
+        --color-background: #ffffff;
+        --color-background-light: #f6f6f6;
+        --color-background-dark: #2a2a2a;
+        --color-headline: #404040;
+        --color-headline-light: #404040;
+        --color-headline-dark: #ffffff;
+        --color-body-base: #555555;
+        --color-body-light: #555555;
+        --color-body-dark: #ffffff;
+        --color-eyebrow: #404040;
+        --color-eyebrow-light: #404040;
+        --color-eyebrow-dark: #ffffff;
+        --color-input: var(--color-background-light);
+        --color-input-light: var(--color-background-light);
+        --color-input-dark: var(--color-background-dark);
+        --color-input-text: var(--color-body-base);
+        --color-input-text-light: var(--color-headline-light);
+        --color-input-text-dark: var(--color-headline-dark);
+        --color-nav-text: var(--color-body-base);
+        --color-nav-text-hover: var(--color-primary);
+        --color-nav-text-active: var(--color-primary);
+        --color-nav-text-current: var(--color-primary);
+        --color-nav-submenu-bg: var(--color-background-light);
+        --color-nav-mobile-text: #ffffff;
+        --color-nav-mobile-text-hover: #cccccc;
+        --color-nav-mobile-text-active: #ffffff;
+        --color-nav-mobile-text-current: #ffffff;
+        --color-header-logo: var(--color-primary);
+        --color-footer-logo: var(--color-primary);
+    }
+
+    /* Monochrome theme button overrides */
+    [data-theme='monochrome'] .bg-primary {
+        background-color: #2a2a2a !important;
+    }
+
+    [data-theme='monochrome'] .bg-primary:hover {
+        background-color: #1a1a1a !important;
+    }
+
+    [data-theme='monochrome'] .bg-secondary {
+        background-color: #404040 !important;
+    }
+
+    [data-theme='monochrome'] .bg-secondary:hover {
+        background-color: #2a2a2a !important;
+    }
+
     [data-theme='zeus'] {
         --color-primary: #3557c1;
         --color-primary-light: #4b6ed4;

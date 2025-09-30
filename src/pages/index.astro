@@ -3,48 +3,37 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
 import SplitPanel from '@components/sections/SplitPanel.astro';
 import Features from '@components/sections/Features.astro';
-import Stats from '@components/sections/Stats.astro';
 import { featureLists } from '@data/features';
 import { statsLists } from '@data/stats';
-import Logos from '@components/sections/Logos.astro';
 import { logoLists } from '@data/logos';
-import CtaBanner from '@components/sections/CtaBanner.astro';
-import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
-import RecentPosts from '@components/sections/RecentPosts.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
 import styleGuideImage from '../assets/images/home/developer.jpg';
-import AboutUs from '@components/sections/AboutUs.astro';
+import fassadeImage from '../assets/images/fassade.jpeg';
+import fassadeGlasImage from '../assets/images/fassade-glas.jpg';
+import nietenImage from '../assets/images/nieten.jpeg';
+import dachImage from '../assets/images/dach.jpeg';
+import eisenImage from '../assets/images/eisen.jpeg';
+import eisenBwImage from '../assets/images/eisen-bw.jpeg';
+import fassadeBetonImage from '../assets/images/fassade-beton.jpeg';
+import fassadeKurvenImage from '../assets/images/fassade-kurven.jpeg';
+import stuetzenImage from '../assets/images/stuetze.jpeg';
+import turmImage from '../assets/images/turm.jpeg';
 
-const seoTitle = 'Ingenieurdienstleistungen & Projektmanagement im Bauwesen';
+const seoTitle = 'Tragwärk Ingenieure und Planer GmbH | Ingenieurbüro im Kanton Freiburg und Bern';
 const seoDescription =
-    'Ingenieurdienstleistungen im Bauwesen - Beratung, Planung & Projektmanagement. Kompetent, zuverlässig & innovativ.';
+    'Ihr Ingenieurbüro in Gurmels (FR) und Bern (BE) für Tragwerksplanung, Statik und Bauingenieurwesen. Wir planen Ihr Projekt im Hochbau, Ingenieurbau und Geotechnik. Jetzt anfragen!';
 
 const heroContent = {
-    title: 'Ihr Ingenieurbüro für Tragwerksplanung & Statik aus der Region',
+    title: 'Ihr Ingenieurbüro für Tragwerksplanung',
     description:
-        'Wir entwickeln Tragwerke, die Sicherheit, Wirtschaftlichkeit und Nachhaltigkeit vereinen – für Hochbau, Ingenieurbauwerke und geotechnische Konstruktionen. Vom Entwurf bis zur Ausführungsplanung – wir begleiten Sie persönlich und kompetent.',
-    // buttons: [
-    //     {
-    //         text: 'Get Started',
-    //         link: '/contact',
-    //         target: '_self',
-    //     },
-    //     {
-    //         text: 'View on GitHub',
-    //         link: 'https://github.com/rspisarski/titan-core',
-    //         target: '_blank',
-    //     },
-    // ],
-    backgroundImage: heroImage,
-    overlayOpacity: 0.2,
+        'Wir entwickeln Tragwerke, die Sicherheit, Wirtschaftlichkeit und Nachhaltigkeit vereinen – für Hochbau, Infrastrukturbau und geotechnische Konstruktionen. Vom Entwurf bis zur Ausführungsplanung – wir begleiten Sie persönlich und kompetent.',
+    backgroundImage: nietenImage,
+    overlayOpacity: 0.7,
 };
 
 const featuresSection = {
-    // eyebrow: 'Dienstleistungen',
     title: 'Dienstleistungen',
-    description:
-        'Ob Wohnhäuser, Gewerbebauten, Brücken oder Baugrubensicherungen - wir bringen unser technisches Know-how in vielfältige Projekte ein.',
     features: featureLists.main.features,
     button: {
         text: 'View Theme Info',
@@ -68,11 +57,11 @@ const FooterCta = {
 
 const aboutUsSection = {
     eyebrow: 'Über Uns',
-    headline: 'Wir sind ein Ingenieurbüro für Tragwerksplanung & Statik aus der Region.',
+    headline: 'Wir sind ein Ingenieurbüro für Tragwerksplanung & Statik.',
     description:
         'Als regionales Bauingenieurbüro sind wir spezialisiert auf moderne Tragwerksplanung für Hochbau, Kunstbauten und Geotechnik. Unser junges Team kombiniert frisches Know-how mit mehrjähriger Erfahrung aus remontierten Ingenieurbüros. Persönliche Beratung, effiziente Lösungen und zuverlässige Projektbetreuung stehen bei uns im Mittelpunkt. Wir freuen uns darauf, Ihr Bauvorhaben von der ersten Idee bis zur Fertigstellung zu begleiten.',
     image: {
-        src: styleGuideImage,
+        src: stuetzenImage,
         alt: 'Featured image',
     },
 };
@@ -93,64 +82,8 @@ const portFolioSection = {
         ],
     },
     image: {
-        src: styleGuideImage,
+        src: eisenBwImage,
         alt: 'Featured image',
-    },
-};
-
-const sideBySideStats = {
-    eyebrow: 'Stats',
-    title: 'Built for Speed and Flexibility',
-    description:
-        'Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.',
-    variant: 'side-by-side' as const,
-    stats: statsLists.withContent.stats,
-    content: {
-        title: 'Built for Speed and Flexibility',
-        description:
-            'Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.',
-        button: {
-            text: 'Discover Titan Core',
-            link: '/theme-info',
-            variant: 'primary' as const,
-        },
-    },
-};
-
-const mainCta = {
-    eyebrow: 'Build Blocks',
-    title: 'Ready-to-Use Components',
-    description:
-        'Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.',
-    button: {
-        text: 'View All Components',
-        link: '/components',
-        variant: 'primary' as const,
-        target: '_self' as const,
-    },
-};
-
-const logosSection = {
-    eyebrow: 'Our Clients',
-    logos: logoLists.main.logos,
-};
-
-const faqsSection = {
-    eyebrow: 'FAQs',
-    title: 'Frequently Asked Questions',
-    description: 'Find answers to common questions about our platform and services.',
-    faqs: faqLists.main.faqs,
-};
-
-const recentPostsSection = {
-    eyebrow: 'LATEST INSIGHTS',
-    title: ' Learn From Our Experience',
-    description:
-        'Explore our latest articles on Astro JS development, theme customization tips, and web performance best practices.',
-    button: {
-        text: 'View All Posts',
-        link: '/blog',
-        variant: 'primary' as const,
     },
 };
 ---
@@ -160,17 +93,4 @@ const recentPostsSection = {
     <Features content={featuresSection} padding="base" background="base" />
     <SplitPanel content={aboutUsSection} imagePosition="right" background="light" padding="base" anchorId="ueber-uns" />
     <SplitPanel content={portFolioSection} imagePosition="left" background="base" padding="base" anchorId="portfolio" />
-
-    <!-- <RecentPosts
-        content={recentPostsSection}
-        background="light"
-        padding="base"
-        postsToShow={3}
-        category="Theme Usage"
-    /> -->
-    <!-- <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" /> -->
-    <!-- <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" /> -->
-    <!-- <Logos content={logosSection} background="base" padding="small" />
-    <Stats content={sideBySideStats} background="dark" padding="base" /> -->
-    <!-- <Faqs content={faqsSection} background="base" padding="base" /> -->
 </Layout>
