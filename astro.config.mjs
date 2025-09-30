@@ -5,11 +5,13 @@ import sitemap from '@astrojs/sitemap';
 
 // Get the site URL from environment variable or use a default for local development
 // const site = process.env.PUBLIC_SITE_URL || 'http://localhost:4321';
-const site = 'https://cdelacombaz.github.io';
+
+const site = process.env.PUBLIC_SITE_URL || 'https://cdelacombaz.github.io';
+const base = process.env.ASTRO_BASE_PATH || '/tragwaerk-astro';
 
 export default defineConfig({
     site,
-    base: '/tragwaerk-astro',
+    base,
     vite: {
         plugins: [tailwindcss()],
         css: {
